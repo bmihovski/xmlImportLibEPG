@@ -13,7 +13,7 @@ for ch in channel:
     try:
         currentEpg = etree.parse(currentEpgXml)
     except:
-        print("VDR Plugin: Couldn't get EPG")
+        print("The XML is not valid: Couldn't get EPG")
     event_id = []
     start_time = []
     for chan in currentEpg.xpath('//programme[@channel="{0}"]'.format(ch)):
