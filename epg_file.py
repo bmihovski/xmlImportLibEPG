@@ -1,4 +1,5 @@
-'# coding: utf8'
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from os import path, remove
 from demjson import encode
 from lxml import etree
@@ -21,6 +22,8 @@ for ch in channel:
         start = str(int(floor(mktime(strptime(stop_time, "%Y%m%d%H%M%S")))))
         start_time.append(start)
         channel_name = chan.attrib["channel"]
+        # print for debugging commented in by default
+        # print channel_name
         events = 0
         for sf in chan.getchildren():
             titles = sf.xpath('//title[@lang="{0}"]/text()'.format(lang))
